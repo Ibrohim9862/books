@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %} books {% endblock title %} {% block context %}
+
+
+
+<div class="container">
+    <h2 class="text-center mt-5 mb-4">Category</h2>
+    <div class="row">
+        {% for category in object %}
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ category.image.url }}" alt="">
+                <div class="card-body">
+                    <a class="card-title" href="{% url 'book_list' category.pk %} ">{{ category.title }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock context %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %} books {% endblock title %} {% block context %}
+<style>
+    .card-horizontal {
+        display: flex;
+        flex: 1 1 auto;
+    }
+</style>
+
+
+<div class="container mt-4 mb-5">
+    <h1 class="text-center">Book Details</h1>
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" src="{{ object.image.url }}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ object.title }}</h4>
+                        <small class="text-muted">{{ object.author }}</small>
+                        <p class="card-text">
+                            {{ object.discription }}
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock context %}
